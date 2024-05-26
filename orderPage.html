@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kolibri</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+    <link rel="stylesheet" href="css/product.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/order.css" />
+    <link rel="stylesheet" href="css/productPage.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header__inner">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__list-item">
+                <a class="nav__link" href="#""> </a>
+              </li>
+              <li class="nav__list-item">
+                <a class="nav__link" href="#"></a>
+              </li>
+              <li class="nav__list-item">
+                <a class="nav__link nav__link-main" href="index.html">Kolibri</a>
+              </li>
+              <li class="nav__list-item">
+                <a class="nav__link" href="#"></a>
+              </li>
+            </ul>
+          </nav>
+          <div class="header__item">
+            <h1 class="header__title">
+              <a class="header__title-link" href="#">Summer Tropikal</a>
+              <span class="header__title-addInfo">Лето 2024</span>
+            </h1>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <div class="container">
+        <h2 class="title-section main">Корзина</h2>
+      </div>
+      <div class="container">
+        <div class="hiddenDiv">
+        <div class="orderPage__inner">
+          <div class="orderPage__items">
+          </div>
+          <div class="order__info">
+            <form class="order__info-form" action="">
+              <h3 class="order-title">Данные для заказа :</h3>
+              <input
+                class="order__form-input"
+                type="text"
+                placeholder="Фамилия"
+              />
+              <input class="order__form-input" type="text" placeholder="Имя" />
+              <input
+                class="order__form-input"
+                type="text"
+                placeholder="Телефон"
+              />
+              <input
+                class="order__form-input"
+                type="email"
+                placeholder="Е-mail"
+              />
+              <input
+                class="order__form-input"
+                type="text"
+                placeholder="Адрес для доставки"
+              />
+            </form>
+            <div class="order__delivery-lsit">
+              <h3 class="order-title">Способ доставки :</h3>
+              <div class="order-radio">
+                <div class="order-radio__item">
+                  <label class="orderRadioLabel" for="">
+                    <input
+                      class="orderRadio"
+                      type="radio"
+                      name="delivery"
+                      value="SMZ"
+                    />
+                  </label>
+                  <span class="order-delivery__title">Самовывоз</span>
+                  <span class="order-delivery__cost">Бесплатно</span>
+                </div>
+                <div class="order-radio__item">
+                  <label class="orderRadioLabel" for="">
+                    <input
+                      class="orderRadio"
+                      type="radio"
+                      name="delivery"
+                      value="SMZ"
+                      checked
+                    />
+                  </label>
+                  <span class="order-delivery__title">Доставка курьером</span>
+                  <span class="order-delivery__cost">от 300 руб</span>
+                </div>
+              </div>
+              <h3 class="order-title">Способ оплаты :</h3>
+              <div class="order-radio">
+                <div class="order-radio__item">
+                  <label class="orderRadioLabel" for="">
+                    <input
+                      class="orderRadio"
+                      type="radio"
+                      name="oplata"
+                      value="nal"
+                    />
+                  </label>
+                  <span class="order-delivery__title">Наличными</span>
+                </div>
+                <div class="order-radio__item">
+                  <label class="orderRadioLabel" for="">
+                    <input
+                      class="orderRadio"
+                      type="radio"
+                      name="oplata"
+                      value="beznal"
+                      checked
+                    />
+                  </label>
+                  <span class="order-delivery__title"
+                    >Картой при получении</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="order__lastInfo">
+            <div class="allCost">
+              <div class="allCost__item">
+                <span class="allCost__item__title">Общая стоимость</span>
+                <span class="allCost__item__cost">21977руб</span>
+              </div>
+              <div class="allCost__item">
+                <span class="allCost__item__title">Доставка</span>
+                <span class="allCost__item__cost">0руб</span>
+              </div>
+            </div>
+            <div class="itogo">
+              <span class="itogo__title">Итого</span>
+              <span class="itogo__cost">0руб</span>
+            </div>
+          </div>
+          <button class="getOrder" type="submit">Оформить заказ</button>
+          <p class="additionalText">
+            Нажимая на кнопку «Офорить заказ», я принимаю условия публичной
+            оферты и политики конфиденциальности
+          </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__inner">
+          <div class="footer__links">
+            <a class="footer__link" href="#">Каталог</a>
+            <a class="footer__link footer__link-main" href="#">Kolibri</a>
+            <a class="footer__link" href="#">О нас</a>
+          </div>
+          <div class="footer__info">
+            <a class="footer__info-link" href="tel:89855130013"
+              >8 (985)-513-00-13</a
+            >
+            <a class="footer__info-link" href="mailto:kolibri@gmail.ru"
+              >kolibri@gmail.ru</a
+            >
+          </div>
+          <span class="privacyandpolitical"
+            >Политика конфиденциальности и Условия использования</span
+          >
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="js/pD.js"></script>
+    <script type="module" src="js/pages/htmlGenerate/cartPage.js" ></script>
+  </body>
+</html>

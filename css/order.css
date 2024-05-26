@@ -1,0 +1,226 @@
+.orderPage__items {
+  margin-bottom: 50px;
+}
+.nav__link:hover{
+  color: #00000085;
+}
+.orderPage__item {
+  padding-top: 25px;
+  padding-bottom: 35px;
+  display: flex;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+.orderPage__imgBox {
+  margin-right: 100px;
+}
+
+.orderPage__img {
+  width: 225px;
+  height: 325px;
+  object-fit: cover;
+}
+
+.orderPage__info {
+  width: 900px;
+}
+
+.orderPage__top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.orderPage__item-title {
+  font-size: 30px;
+  margin-bottom: 20px;
+
+}
+
+.quantityStr {
+  font-size: 20px;
+  margin-right: 2%;
+}
+.quantityStr>span{
+  font-weight: 500;
+}
+
+.orderPage__quantity {
+  width: 50px;
+  margin: 0px 10px 0 10px;
+  font-size: 20px;
+}
+
+.orderPage__item-cost {
+  color: #000;
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+.orderPage__item-cost>span{
+  font-weight: 500;
+}
+.orderPage__color {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.orderPage__color>span{
+  font-weight: 500;
+}
+.orderPage__size {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+.orderPage__size>span{
+  font-weight: 500;
+}
+
+.orderPage__counter {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  justify-content: space-between;
+}
+
+.order__info {
+  margin-bottom: 50px;
+  display: flex;
+
+}
+
+.order-radio:nth-child(2) {
+  margin-bottom: 60px;
+}
+
+.order-radio__item {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.order-delivery__title {
+  font-size: 18px;
+  margin-left: 15px;
+  width: 225px;
+}
+
+.orderRadio {
+  cursor: pointer;
+}
+
+.order-delivery__cost {
+  font-size: 16px;
+  color: #8b8b8b;
+  margin-left: 15px;
+  width: 100px;
+}
+
+.order-title {
+  font-weight: 400;
+  font-size: 30px;
+  margin-bottom: 25px;
+}
+
+.order__info-form {
+  width: 600px;
+  margin-right: 130px;
+}
+
+.order__form-input {
+  width: 100%;
+  display: block;
+  border: none;
+  border-bottom: 1px solid #d3d3d3;
+  padding: 10px;
+  margin-bottom: 15px;
+
+  font-family: "Montserrat", sans-serif;
+}
+
+.allCost {
+
+  padding: 15px 5px 15px 5px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  margin-bottom: 25px;
+}
+
+.allCost__item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.allCost__item__title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.itogo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+
+.itogo__title {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.getOrder {
+  width: 300px;
+  background-color: black;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 25px;
+  margin-bottom: 15px;
+}
+
+.additionalText {
+  font-size: 14px;
+  color: #6F6F6F;
+  width: 370px;
+  margin-bottom: 120px;
+}
+
+.plus {
+  color: #000;
+  background-color: transparent;
+  border: none;
+  font-size: 35px;
+  transition: all .2s ease-in;
+  cursor: pointer;
+}
+
+.plus:hover {
+  color: rgba(0, 0, 0, 0.534);
+}
+
+.minus {
+  color: #000;
+  background-color: transparent;
+  border: none;
+  font-size: 35px;
+  transition: all .2s ease-in;
+  cursor: pointer;
+}
+
+.minus:hover {
+  color: rgba(0, 0, 0, 0.534);
+}
+
+.orderPage__btnCancel {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all .5s ease-in-out;
+}
+
+.orderPage__btnCancel:hover {
+  transform: rotate(180deg);
+}
