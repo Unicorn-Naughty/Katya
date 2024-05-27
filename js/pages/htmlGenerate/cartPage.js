@@ -1,22 +1,23 @@
 import { cart, removeFromCart } from "../interactive/cart.js";
 document.addEventListener("DOMContentLoaded", () => {
-  function upDatePage() {
-    class UserOrder {
-      constructor() {
-        user: {
-          (this.name = inputs[1].value),
-            (this.Surname = inputs[0].value),
-            (this.phone = inputs[2].value),
-            (this.addres = inputs[4].value),
-            (this.email = inputs[3].value),
-            (this.payment = payment),
-            (this.delivery = delivery),
-            (this.order = cart);
-          this.orderCost = totalCost;
-        }
+  let checkBoxesDel = document.querySelectorAll(".orderRadio--del");
+  let totalCost;
+  class UserOrder {
+    constructor() {
+      user: {
+        (this.name = inputs[1].value),
+          (this.Surname = inputs[0].value),
+          (this.phone = inputs[2].value),
+          (this.addres = inputs[4].value),
+          (this.email = inputs[3].value),
+          (this.payment = payment),
+          (this.delivery = delivery),
+          (this.order = cart);
+        this.orderCost = totalCost;
       }
     }
-
+  }
+  function upDatePage() {
     let cartsProduct = ``;
     if (cart.length > 0) {
       cart.forEach((cartItem) => {
@@ -80,104 +81,6 @@ document.addEventListener("DOMContentLoaded", () => {
         location.reload();
       });
     });
-
-    //Форма
-    let inputs = document.querySelectorAll(".order__form-input");
-    let phone = inputs[2];
-    let delivery = "";
-    let payment = "";
-    let checkBoxesDel = document.querySelectorAll(".orderRadio--del");
-    //Проверка телефона
-    phone.onfocus = function () {
-      if (phone.value.length !== 12) {
-        phone.value = "+7";
-      }
-    };
-    phone.onblur = function () {
-      checkPhoneNumber(phone);
-    };
-    function checkPhoneNumber(inField) {
-      if (inField.value.length !== 12) {
-        inField.value = "";
-      }
-    }
-    //Создали пользователя
-    let user;
-
-    //Работа с формой
-    document
-      .querySelector(".order__info-form")
-      .addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        inputs.forEach((input) => {
-          if (
-            input.value < 1 ||
-            input.value === "" ||
-            input.value === undefined
-          ) {
-            e.preventDefault();
-            input.style.border = "1px solid red";
-            input.scrollIntoView({ block: "center", behavior: "smooth" });
-          } else {
-          }
-        });
-
-        let checkBoxesPayment = document.querySelectorAll(
-          ".orderRadio--payment"
-        );
-        checkBoxesPayment.forEach((chekBoxPayment) => {
-          if (chekBoxPayment.checked) {
-            payment = chekBoxPayment.value;
-          }
-        });
-        checkBoxesDel.forEach((chekBoxDel) => {
-          if (chekBoxDel.checked) {
-            delivery = chekBoxDel.value;
-          }
-        });
-        let number = phone.value.slice(1);
-        if (+number) {
-          //Создали юзера
-          user = new UserOrder();
-          console.log(user);
-        } else {
-          e.preventDefault();
-          phone.style.border = "1px solid red";
-          phone.scrollIntoView({ block: "center", behavior: "smooth" });
-        }
-      });
-
-    //Общая сумма без доставки
-    let cost = 0;
-    cart.forEach((cartItem) => {
-      cost += cartItem.cost * cartItem.quantity;
-    });
-    document.querySelector(".allCost__item__cost").innerHTML = `${cost} руб`;
-    // Сумма дсотавки
-    let deliveryCost = 0;
-    checkBoxesDel.forEach((chekBoxDel) => {
-      if (chekBoxDel.checked) {
-        if (chekBoxDel.value == "courier") {
-          deliveryCost += 300;
-        }
-      }
-    });
-
-    //Цена доставки
-    document.querySelector(
-      ".allCost__item__cost-del"
-    ).innerHTML = `${deliveryCost} руб`;
-
-    document.querySelectorAll(".orderRadio").forEach((element) => {
-      element.addEventListener("click", () => {
-        upDatePage();
-      });
-    });
-    //Цена Заказа
-    let totalCost = cost + deliveryCost;
-    document.querySelector(".itogo__cost").innerHTML = `${totalCost} руб`;
-
     //плюс
     document.querySelectorAll(".plus").forEach((plus) => {
       plus.addEventListener("click", () => {
@@ -206,6 +109,99 @@ document.addEventListener("DOMContentLoaded", () => {
         upDatePage();
       });
     });
+    //Общая сумма без доставки
+    let cost = 0;
+    cart.forEach((cartItem) => {
+      cost += cartItem.cost * cartItem.quantity;
+    });
+    document.querySelector(".allCost__item__cost").innerHTML = `${cost} руб`;
+    // Сумма дсотавки
+    let deliveryCost = 0;
+    checkBoxesDel.forEach((chekBoxDel) => {
+      if (chekBoxDel.checked) {
+        if (chekBoxDel.value == "courier") {
+          deliveryCost += 300;
+        }
+      }
+    });
+
+    //Цена доставки
+    document.querySelector(
+      ".allCost__item__cost-del"
+    ).innerHTML = `${deliveryCost} руб`;
+
+    document.querySelectorAll(".orderRadio").forEach((element) => {
+      element.addEventListener("click", () => {
+        upDatePage();
+      });
+    });
+    //Цена Заказа
+    totalCost = cost + deliveryCost;
+    document.querySelector(".itogo__cost").innerHTML = `${totalCost} руб`;
   }
   upDatePage();
+
+  //Форма
+  let inputs = document.querySelectorAll(".order__form-input");
+  let phone = inputs[2];
+  let delivery = "";
+  let payment = "";
+
+  //Проверка телефона
+  phone.onfocus = function () {
+    if (phone.value.length !== 12) {
+      phone.value = "+7";
+    }
+  };
+  phone.onblur = function () {
+    checkPhoneNumber(phone);
+  };
+  function checkPhoneNumber(inField) {
+    if (inField.value.length !== 12) {
+      inField.value = "";
+    }
+  }
+  //Создали пользователя
+  let user;
+  //Работа с формой
+  document
+    .querySelector(".order__info-form")
+    .addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      inputs.forEach((input) => {
+        if (
+          input.value < 1 ||
+          input.value === "" ||
+          input.value === undefined
+        ) {
+          e.preventDefault();
+          input.style.border = "1px solid red";
+          input.scrollIntoView({ block: "center", behavior: "smooth" });
+        } else {
+        }
+      });
+
+      let checkBoxesPayment = document.querySelectorAll(".orderRadio--payment");
+      checkBoxesPayment.forEach((chekBoxPayment) => {
+        if (chekBoxPayment.checked) {
+          payment = chekBoxPayment.value;
+        }
+      });
+      checkBoxesDel.forEach((chekBoxDel) => {
+        if (chekBoxDel.checked) {
+          delivery = chekBoxDel.value;
+        }
+      });
+      let number = phone.value.slice(1);
+      if (+number) {
+        //Создали юзера
+        user = new UserOrder();
+        console.log(user);
+      } else {
+        e.preventDefault();
+        phone.style.border = "1px solid red";
+        phone.scrollIntoView({ block: "center", behavior: "smooth" });
+      }
+    });
 });
