@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //Создание каждой карточки товаров
     producstMain += `             
-     <div class="collection__item">
+     <div class="collection__item" >
                 <div class="collection__boximg">
                   <a class="collection__item-linkImg"
                   data-product-id="${productMain.id}"
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let productsSoon = "";
   arrOfSoonCards.forEach((productSoon) => {
     productsSoon += `              
-    <div class="awaitSoon__item">
+    <a class="awaitSoon__item" href="#collection__communictaion">
     <div class="awaitSoon__item-imgBox">
     <img
     class="awaitSoon__item-img"
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <h5 class="awaitSoon__name">${productSoon.name}</h5>
                     <p class="awaitSoon__cost">${productSoon.cost}Р</p>
                 </div>
-                </div>`;
+                </a>`;
   });
   document.querySelector(".awaitSoon__items").innerHTML = productsSoon;
   $(".awaitSoon__items").slick({
