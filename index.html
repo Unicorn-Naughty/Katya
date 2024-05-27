@@ -44,8 +44,7 @@
               <li class="nav__list-item">
                 <a class="nav__link" href="#">Доставка</a>
               </li>
-              <li class="nav__list-item">
-                <span class="cartCount">1</span>
+              <li class="nav__list-item nav__list-item--cart">
                 <a class="nav__link" href="orderPage.html"
                   ><svg width="23" height="27" viewBox="0 0 23 27" fill="none">
                     <path
@@ -131,11 +130,11 @@
         <div class="awaitSoon">
           <div class="container">
             <h2 class="title-section">Скоро в продаже</h2>
-            <div class="awaitSoon__items"></div>
+            <a class="awaitSoon__items" href="#collection__communictaion"></a>
           </div>
         </div>
       </div>
-      <div class="collection__communictaion">
+      <div class="collection__communictaion" id="collection__communictaion">
         <div class="container">
           <h2 class="title-section">Связаться с нами</h2>
           <div class="collection__communictaion--inner">
@@ -159,14 +158,15 @@
                   class="collection__communictaion-input"
                   type="email"
                   placeholder="Введите email"
-                /> </label
-              >Сообщение
+                />
+              </label>
               <textarea
                 class="collection__communictaion-textarea"
                 name=""
                 id=""
                 placeholder="Введите сообщение"
               ></textarea>
+              <button class="sendMes" type="submit">Отправить сообщение</button>
             </form>
             <div class="collection__communictaion-imgBox">
               <img

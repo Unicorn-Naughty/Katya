@@ -38,13 +38,15 @@
           <nav class="nav">
             <ul class="nav__list">
               <li class="nav__list-item">
-                <a class="nav__link" href="#""> </a>
+                <a class="nav__link" href="#"> </a>
               </li>
               <li class="nav__list-item">
                 <a class="nav__link" href="#"></a>
               </li>
               <li class="nav__list-item">
-                <a class="nav__link nav__link-main" href="index.html">Kolibri</a>
+                <a class="nav__link nav__link-main" href="index.html"
+                  >Kolibri</a
+                >
               </li>
               <li class="nav__list-item">
                 <a class="nav__link" href="#"></a>
@@ -66,114 +68,124 @@
       </div>
       <div class="container">
         <div class="hiddenDiv">
-        <div class="orderPage__inner">
-          <div class="orderPage__items">
-          </div>
-          <div class="order__info">
-            <form class="order__info-form" action="">
-              <h3 class="order-title">Данные для заказа :</h3>
-              <input
-                class="order__form-input"
-                type="text"
-                placeholder="Фамилия"
-              />
-              <input class="order__form-input" type="text" placeholder="Имя" />
-              <input
-                class="order__form-input"
-                type="text"
-                placeholder="Телефон"
-              />
-              <input
-                class="order__form-input"
-                type="email"
-                placeholder="Е-mail"
-              />
-              <input
-                class="order__form-input"
-                type="text"
-                placeholder="Адрес для доставки"
-              />
-            </form>
-            <div class="order__delivery-lsit">
-              <h3 class="order-title">Способ доставки :</h3>
-              <div class="order-radio">
-                <div class="order-radio__item">
-                  <label class="orderRadioLabel" for="">
+          <div class="orderPage__inner">
+            <div class="orderPage__items"></div>
+            <div class="order__info">
+              <form class="order__info-form" action="">
+                <h3 class="order-title">Данные для заказа :</h3>
+                <div class="topFrom">
+                  <div class="inputsFields">
                     <input
-                      class="orderRadio"
-                      type="radio"
-                      name="delivery"
-                      value="SMZ"
+                      class="order__form-input"
+                      type="text"
+                      placeholder="Фамилия"
                     />
-                  </label>
-                  <span class="order-delivery__title">Самовывоз</span>
-                  <span class="order-delivery__cost">Бесплатно</span>
-                </div>
-                <div class="order-radio__item">
-                  <label class="orderRadioLabel" for="">
                     <input
-                      class="orderRadio"
-                      type="radio"
-                      name="delivery"
-                      value="SMZ"
-                      checked
+                      class="order__form-input"
+                      type="text"
+                      placeholder="Имя"
                     />
-                  </label>
-                  <span class="order-delivery__title">Доставка курьером</span>
-                  <span class="order-delivery__cost">от 300 руб</span>
-                </div>
-              </div>
-              <h3 class="order-title">Способ оплаты :</h3>
-              <div class="order-radio">
-                <div class="order-radio__item">
-                  <label class="orderRadioLabel" for="">
                     <input
-                      class="orderRadio"
-                      type="radio"
-                      name="oplata"
-                      value="nal"
+                      class="order__form-input"
+                      type="text"
+                      placeholder="Телефон"
+                      maxlength="12"
                     />
-                  </label>
-                  <span class="order-delivery__title">Наличными</span>
-                </div>
-                <div class="order-radio__item">
-                  <label class="orderRadioLabel" for="">
                     <input
-                      class="orderRadio"
-                      type="radio"
-                      name="oplata"
-                      value="beznal"
-                      checked
+                      class="order__form-input"
+                      type="email"
+                      placeholder="Е-mail"
                     />
-                  </label>
-                  <span class="order-delivery__title"
-                    >Картой при получении</span
-                  >
+                    <input
+                      class="order__form-input"
+                      type="text"
+                      placeholder="Адрес для доставки"
+                    />
+                  </div>
+                  <div class="order__delivery-lsit">
+                    <h3 class="order-title">Способ доставки :</h3>
+                    <div class="order-radio">
+                      <div class="order-radio__item">
+                        <label class="orderRadioLabel" for="">
+                          <input
+                            class="orderRadio orderRadio--del"
+                            type="radio"
+                            name="delivery"
+                            value="SMZ"
+                          />
+                        </label>
+                        <span class="order-delivery__title">Самовывоз</span>
+                        <span class="order-delivery__cost">Бесплатно</span>
+                      </div>
+                      <div class="order-radio__item">
+                        <label class="orderRadioLabel" for="">
+                          <input
+                            class="orderRadio orderRadio--del"
+                            type="radio"
+                            name="delivery"
+                            value="courier"
+                            checked
+                          />
+                        </label>
+                        <span class="order-delivery__title"
+                          >Доставка курьером</span
+                        >
+                        <span class="order-delivery__cost">от 300 руб</span>
+                      </div>
+                    </div>
+                    <h3 class="order-title">Способ оплаты :</h3>
+                    <div class="order-radio">
+                      <div class="order-radio__item">
+                        <label class="orderRadioLabel" for="">
+                          <input
+                            class="orderRadio orderRadio--payment"
+                            type="radio"
+                            name="oplata"
+                            value="nal"
+                          />
+                        </label>
+                        <span class="order-delivery__title">Наличными</span>
+                      </div>
+                      <div class="order-radio__item">
+                        <label class="orderRadioLabel" for="">
+                          <input
+                            class="orderRadio orderRadio--payment"
+                            type="radio"
+                            name="oplata"
+                            value="beznal"
+                            checked
+                          />
+                        </label>
+                        <span class="order-delivery__title"
+                          >Картой при получении</span
+                        >
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+                <div class="order__lastInfo">
+                  <div class="allCost">
+                    <div class="allCost__item">
+                      <span class="allCost__item__title">Общая стоимость</span>
+                      <span class="allCost__item__cost"></span>
+                    </div>
+                    <div class="allCost__item">
+                      <span class="allCost__item__title">Доставка</span>
+                      <span class="allCost__item__cost allCost__item__cost-del"></span>
+                    </div>
+                  </div>
+                  <div class="itogo">
+                    <span class="itogo__title">Итого</span>
+                    <span class="itogo__cost">0руб</span>
+                  </div>
+                </div>
+                <button class="getOrder" type="submit">Оформить заказ</button>
+              </form>
             </div>
-          </div>
-          <div class="order__lastInfo">
-            <div class="allCost">
-              <div class="allCost__item">
-                <span class="allCost__item__title">Общая стоимость</span>
-                <span class="allCost__item__cost">21977руб</span>
-              </div>
-              <div class="allCost__item">
-                <span class="allCost__item__title">Доставка</span>
-                <span class="allCost__item__cost">0руб</span>
-              </div>
-            </div>
-            <div class="itogo">
-              <span class="itogo__title">Итого</span>
-              <span class="itogo__cost">0руб</span>
-            </div>
-          </div>
-          <button class="getOrder" type="submit">Оформить заказ</button>
-          <p class="additionalText">
-            Нажимая на кнопку «Офорить заказ», я принимаю условия публичной
-            оферты и политики конфиденциальности
-          </p>
+            <p class="additionalText">
+              Нажимая на кнопку «Офорить заказ», я принимаю условия публичной
+              оферты и политики конфиденциальности
+            </p>
           </div>
         </div>
       </div>
@@ -212,6 +224,6 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="js/pD.js"></script>
-    <script type="module" src="js/pages/htmlGenerate/cartPage.js" ></script>
+    <script type="module" src="js/pages/htmlGenerate/cartPage.js"></script>
   </body>
 </html>

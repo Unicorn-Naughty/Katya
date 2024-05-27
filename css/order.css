@@ -82,14 +82,14 @@
   justify-content: space-between;
 }
 
-.order__info {
-  margin-bottom: 50px;
-  display: flex;
-
+.inputsFields{
+  display: block;
+  width: 600px;
+  margin-right: 100px;
 }
 
 .order-radio:nth-child(2) {
-  margin-bottom: 60px;
+  margin-bottom: 10px;
 }
 
 .order-radio__item {
@@ -121,10 +121,7 @@
   margin-bottom: 25px;
 }
 
-.order__info-form {
-  width: 600px;
-  margin-right: 130px;
-}
+
 
 .order__form-input {
   width: 100%;

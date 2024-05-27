@@ -357,6 +357,15 @@ main {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   resize: none;
+  margin-bottom: 25px;
+}
+
+.sendMes {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  border: 1px solid #000;
+  padding: 15px;
 }
 
 .cartCount {
@@ -460,5 +469,5 @@ main {
   font-size: 50px;
   position: absolute;
   top: 160px;
-  right: 30px;
+  right: 10px;
 }

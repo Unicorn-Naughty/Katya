@@ -1,16 +1,14 @@
 import { getProduct } from "../../data/dataCards.js";
 import { cart } from "../interactive/cart.js";
 import { arrOfProducts } from "../../data/dataCards.js";
+import { products } from "./index.js";
 document.addEventListener("DOMContentLoaded", () => {
-  let idOfelement = [];
-  //Перербали локалСтейдж чтобы установить ид куда кликнули
-  let getClickedUserProd = JSON.parse(localStorage.getItem("products"));
-  let prodNow = getProduct(getClickedUserProd[getClickedUserProd.length - 1]);
-  console.log(prodNow);
-
-  let product = getProduct(idOfelement[idOfelement.length - 1]);
-  console.log(product);
-  let productDetail = `
+  function upDatePage() {
+    let idOfelement = [];
+    //Перербали локалСтейдж чтобы установить ид куда кликнули
+    let getClickedUserProd = JSON.parse(localStorage.getItem("products"));
+    let prodNow = getProduct(getClickedUserProd[getClickedUserProd.length - 1]);
+    let productDetail = `
           <div class="main__inner">
           <div class="product-details__thumb">
             <div class="product-details__thumb-item">
@@ -119,52 +117,96 @@ document.addEventListener("DOMContentLoaded", () => {
           </p>
         </section>
   `;
-  document.querySelector(".prdInner").innerHTML = productDetail;
-  $(".product-details__thumb").slick({
-    asNavFor: ".product-details__big",
-    focusOnSelect: true,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    vertical: true,
-    draggable: false,
-  });
-  $(".product-details__big").slick({
-    asNavFor: ".product-details__thumb",
-    draggable: false,
-    arrows: false,
-    fade: true,
-  });
-  localStorage.removeItem(`${idOfelement}`);
-
-  let inputFileds = document.querySelectorAll(".productSizeInput");
-
-  document.querySelector(".addBtn").addEventListener("click", () => {
-    //CHEKER NA sizes
-    inputFileds.forEach((element) => {
-      if (element.checked) {
-        prodNow.size = element.value;
-      }
+    document.querySelector(".prdInner").innerHTML = productDetail;
+    $(".product-details__thumb").slick({
+      asNavFor: ".product-details__big",
+      focusOnSelect: true,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      vertical: true,
+      draggable: false,
     });
-    //Одинаковые карточки увеличиваем количество на 1
-    let matchingProd;
-    cart.forEach((cartItem) => {
-      if (prodNow.size == cartItem.size && prodNow.id === cartItem.id) {
-        matchingProd = cartItem;
-      }
+    $(".product-details__big").slick({
+      asNavFor: ".product-details__thumb",
+      draggable: false,
+      arrows: false,
+      fade: true,
     });
-    if (matchingProd) {
-      matchingProd.quantity += 1;
-    } else {
-      cart.push(prodNow);
+    localStorage.removeItem(`${idOfelement}`);
+
+    let inputFileds = document.querySelectorAll(".productSizeInput");
+
+    document.querySelector(".addBtn").addEventListener("click", () => {
+      //CHEKER NA sizes
+      inputFileds.forEach((element) => {
+        if (element.checked) {
+          prodNow.size = element.value;
+        }
+      });
+      //Одинаковые карточки увеличиваем количество на 1
+      let matchingProd;
+      console.log(prodNow.size);
+      console.log(prodNow);
+      cart.forEach((cartItem) => {
+        if (prodNow.id + prodNow.size === cartItem.id) {
+          matchingProd = cartItem;
+        }
+      });
+      if (matchingProd) {
+        matchingProd.quantity += 1;
+      } else {
+        cart.push({
+          name: prodNow.name,
+          id: prodNow.id + prodNow.size,
+          color: prodNow.color,
+          quantity: prodNow.quantity,
+          description: prodNow.description,
+          thumbPics: prodNow.thumbPics,
+          cost: prodNow.cost,
+          size: prodNow.size,
+        });
+      }
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      //Сделанно не корректно
+      location.reload();
+      alert("Товар доавблен в корзину");
+    });
+    //Количество товара в корзине отображение на странице
+    let quantity = 0;
+    cart.forEach((element) => {
+      quantity += element.quantity;
+    });
+    if (cart.length > 0) {
+      document
+        .querySelector(".nav__list-item--cart")
+        .insertAdjacentHTML(
+          "afterbegin",
+          `<span class="cartCount">${quantity}</span>`
+        );
     }
-    console.log(matchingProd);
-    console.log(prodNow);
-    localStorage.setItem("cart", JSON.stringify(cart));
-  });
 
-  //slider
+    //Переход по карточкам из слайдера
+    let showItem = document.querySelectorAll(".collection__item-btn");
+    showItem.forEach((linkBtn) => {
+      linkBtn.addEventListener("mousedown", (e) => {
+        let { productId } = linkBtn.dataset;
+        products.push(productId);
+        localStorage.setItem("products", JSON.stringify(products));
+      });
+    });
+    document
+      .querySelectorAll(".collection__item-linkImg")
+      .forEach((imgLink) => {
+        imgLink.addEventListener("mousedown", (e) => {
+          let { productId } = imgLink.dataset;
+          products.push(productId);
+          localStorage.setItem("products", JSON.stringify(products));
+        });
+      });
+  }
+
   let sliderInner = ``;
-  console.log(arrOfProducts);
   arrOfProducts.forEach((sliderProduct) => {
     let name = sliderProduct.name.split(" ");
     sliderInner += `
@@ -196,4 +238,6 @@ document.addEventListener("DOMContentLoaded", () => {
     speed: 500,
     autoplay: true,
   });
+
+  upDatePage();
 });

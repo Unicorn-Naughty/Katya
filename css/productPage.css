@@ -182,3 +182,7 @@
 .product__additional {
   margin-bottom: 150px;
 }
+.topFrom{
+  display: flex;
+  margin-bottom: 100px;
+}
