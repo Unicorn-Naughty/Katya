@@ -1,0 +1,6 @@
+.dpublicOfer__text + .dpublicOfer__text{
+margin-top: 25px;
+}
+.dpublicOfer__text:last-child{
+  margin-bottom: 100px;
+}

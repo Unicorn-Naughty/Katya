@@ -1,9 +1,7 @@
 .orderPage__items {
   margin-bottom: 50px;
 }
-.nav__link:hover{
-  color: #00000085;
-}
+
 .orderPage__item {
   padding-top: 25px;
   padding-bottom: 35px;
@@ -15,7 +13,9 @@
 .orderPage__imgBox {
   margin-right: 100px;
 }
-
+.nav__list{
+  justify-content: center;
+}
 .orderPage__img {
   width: 225px;
   height: 325px;

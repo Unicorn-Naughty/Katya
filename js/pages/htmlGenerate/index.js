@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                     <div class="collection__item-info">
                     <h5 class="collection__item-name">${name[0]}</h5>
-                    <a class="collection__item-btn" data-product-id="${productMain.id}"href="productPage.html">К товару </a>
+                    <a class="collection__item-btn" data-product-id="${productMain.id}"href="productPage.html">${productMain.cost}₽</a>
                 </div>
               </div>`;
   });
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     </div>
                     <div class="awaitSoon__item-infobox">
                     <h5 class="awaitSoon__name">${productSoon.name}</h5>
-                    <p class="awaitSoon__cost">${productSoon.cost}Р</p>
+                    <p class="awaitSoon__cost">${productSoon.cost}₽</p>
                 </div>
                 </a>`;
   });

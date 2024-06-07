@@ -8,6 +8,9 @@ document.addEventListener("DOMContentLoaded", () => {
     //Перербали локалСтейдж чтобы установить ид куда кликнули
     let getClickedUserProd = JSON.parse(localStorage.getItem("products"));
     let prodNow = getProduct(getClickedUserProd[getClickedUserProd.length - 1]);
+    document.querySelector(
+      ".tIc"
+    ).innerHTML = `<h2 class="title-section main title-section-vstavka">${prodNow.secondName}:</h2>`;
     let productDetail = `
           <div class="main__inner">
           <div class="product-details__thumb">
@@ -86,9 +89,11 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div class="product__buy">
                 <button class="addBtn product__page-addBtn">В корзину</button>
-                <span class="product__cost">${prodNow.cost}Р</span>
+                <span class="product__cost">${prodNow.cost}₽</span>
               </div>
               <span class="infoAboutCachestvo">${prodNow.compound}</span>
+              <span class="infoAboutCachestvo">Параметры модели: рост 167 см, ОГ/ОТ/ОБ — 78/62/88, размер на модели: S
+</span>
             </div>
           </div>
         </div>
@@ -225,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
                 <div class="collection__item-info">
                   <h5 class="collection__item-name">${name[0]}</h5>
-                  <a class="collection__item-btn" data-product-id="${sliderProduct.id}"href="productPage.html">К товару </a>
+                  <a class="collection__item-btn" data-product-id="${sliderProduct.id}"href="productPage.html">${sliderProduct.cost}₽</a>
                 </div>
               </div>
     `;

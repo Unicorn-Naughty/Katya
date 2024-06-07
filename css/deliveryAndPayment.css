@@ -1,0 +1,12 @@
+.deliveryAndPayment__inner-text+.deliveryAndPayment__inner-text{
+  margin-top: 25px;
+}
+.deliveryAndPayment__inner-text:last-child{
+  margin-bottom: 100px;
+}
+.title-section-delv{
+  margin-top: 50px;
+}
+.title-section{
+  margin-bottom:  40px;
+}

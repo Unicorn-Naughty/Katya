@@ -20,7 +20,8 @@ main {
 }
 
 .header {
-  background-image: url('../pics/1.jpg');
+  position: relative;
+  background-image: url('../pics/main.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -36,7 +37,7 @@ main {
 
 .nav__list {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -46,7 +47,8 @@ main {
 }
 
 .nav__link {
-  color: #ffffffbe;
+  position: relative;
+  color: #ffffff;
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
@@ -54,7 +56,20 @@ main {
   text-transform: uppercase;
 }
 
-.nav__link:hover {
+.nav__link::after {
+  position: absolute;
+  content: '';
+  left: 0;
+  bottom: 0;
+  display: block;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: all .3s;
+}
+
+.nav__link:hover::after {
+  width: 100%;
   color: #fff;
 }
 
@@ -62,11 +77,22 @@ main {
 .nav__link.nav__link-main {
   font-size: 50px;
   line-height: 60px;
-  color: #000;
+  color: #fff;
   font-weight: 500;
 }
 
 .header__item {
+  position: absolute;
+  bottom: 65px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.header__title {
+  align-items: center;
+  justify-content: center;
   display: flex;
   flex-direction: column;
 }
@@ -74,14 +100,14 @@ main {
 .header__title-link {
   color: #fff;
   font-size: 75px;
-  font-weight: 500;
+  font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
 
 }
 
 .header__title-addInfo {
-  color: #ffffffbe;
+  color: #ffffff;
   display: block;
   font-weight: 400;
   font-size: 25px;
@@ -102,6 +128,12 @@ main {
 
 .aboutus {
   margin-bottom: 150px;
+}
+
+.abouts__img {
+  object-fit: cover;
+  width: 325px;
+  height: 408px;
 }
 
 .aboutus__content {
@@ -128,29 +160,35 @@ main {
 .aboutus__learn-more {
   background-color: transparent;
   border: none;
-  color: #000;
-  border-bottom: 1px solid #000;
+  color: #7c7c7c;
   cursor: pointer;
   position: relative;
   height: 42px;
+  transition: all .3s;
+  position: relative;
 }
 
-.aboutus__learn-more::before {
-  content: '';
+.aboutus__learn-more:hover {
+  color: #000;
+}
+
+.aboutus__learn-more::after {
   position: absolute;
-  top: 0;
+  content: '';
   left: 0;
+  bottom: 0;
+  display: block;
   width: 0;
-  height: 42px;
-  border-radius: 50px;
-  background: rgba(68, 171, 255, 0.397);
-  border-radius: 5px;
-  transition: all 1s ease;
+  height: 1px;
+  background: #000000;
+  transition: all .3s;
 }
 
-.aboutus__learn-more:hover::before {
+.aboutus__learn-more:hover::after {
   width: 100%;
 }
+
+
 
 .collection {
   margin-bottom: 150px;
@@ -205,7 +243,9 @@ main {
   color: rgba(0, 0, 0, 0.664);
 }
 
-.awaitSoon {}
+.awaitSoon {
+  position: relative;
+}
 
 .awaitSoon__items {
   position: relative;
@@ -242,7 +282,7 @@ main {
 }
 
 .awaitSoon__cost {
-  color: red;
+  color: #000;
   font-weight: 400;
   font-size: 15px;
 }
@@ -250,7 +290,7 @@ main {
 .footer__links {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   margin-bottom: 25px;
 }
 
@@ -275,14 +315,10 @@ main {
   text-transform: uppercase;
 }
 
-.footer__link+.footer__link {
-  margin-left: 80px;
-}
-
 .footer__info {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 75px;
 }
 
 .footer__info-link {
@@ -290,10 +326,11 @@ main {
 }
 
 .footer__info-link+.footer__info-link {
-  margin-left: 20px;
+  margin-left: 50px;
 }
 
 .privacyandpolitical {
+  margin-bottom: 25px;
   display: flex;
   justify-content: center;
   color: #616161;
@@ -305,13 +342,15 @@ main {
 }
 
 .collection__communictaion--inner {
+  margin-top: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .collection__communictaion-img {
-  width: 680px;
+  height: 600px;
+  object-fit: cover;
 
 }
 
@@ -320,11 +359,10 @@ main {
 }
 
 .collection__communictaion-form {
-  padding: 30px;
   margin-right: 100px;
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 450px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
 }
@@ -338,11 +376,13 @@ main {
 }
 
 .collection__communictaion-input {
+  margin-top: 8px;
   padding: 10px;
   width: 100%;
   display: block;
   border: none;
-  border-bottom: 1px solid #000;
+  padding: 15px;
+  border: 1px solid #6F6F6F;
 
 }
 
@@ -352,6 +392,7 @@ main {
 
 .collection__communictaion-textarea {
   height: 120px;
+  padding-top: 15px;
   padding-right: 10px;
   padding-left: 10px;
   font-family: "Montserrat", sans-serif;
@@ -366,6 +407,12 @@ main {
   background-color: transparent;
   border: 1px solid #000;
   padding: 15px;
+  transition: all .3s;
+}
+
+.sendMes:hover {
+  background-color: #000;
+  color: #fff;
 }
 
 .cartCount {
@@ -417,12 +464,18 @@ main {
 .topModal {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: start;
 }
 
+.modalDown {
+  width: 923px;
+  padding: 50px;
+  margin: 0 auto;
+}
+
 .textModal {
-  font-size: 18px;
+  font-size: 22px;
   margin-bottom: 25px;
 }
 
@@ -470,4 +523,83 @@ main {
   position: absolute;
   top: 160px;
   right: 10px;
+}
+
+.addDiv {
+  display: flex;
+  justify-content: center;
+}
+
+.privacyandpolitical+.privacyandpolitical {
+  margin-left: 50px;
+}
+
+.modalMailing {
+  display: block;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  z-index: 9999;
+  position: absolute;
+  padding: 20px;
+  background-color: #fff;
+  width: 600px;
+  box-shadow: 8px 11px 21px 3px rgba(0, 0, 0, 0.35);
+border-radius: 8px;
+}
+
+.modalMailing__cancel-btn {
+  display: flex;
+  justify-content: end;
+}
+
+.modalMailing__title {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.modalMailing__div {
+  display: flex;
+  justify-content: center;
+}
+
+.modalMailing__input {
+  width: 360px;
+  padding: 15px 5px;
+}
+
+.modalMailing__input::placeholder {
+  text-align: center;
+}
+
+.modalMailing__text {
+  margin: 0 auto;
+  width: 420px;
+  font-size: 12px;
+}
+
+.modalMailingBtn {
+  border: none;
+  background-color: transparent;
+  border: 1px solid #000;
+  transition: all .3s;
+  cursor: pointer;
+  padding: 25px;
+  font-size: 15px;
+}
+
+.modalMailingBtn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.modalMailing__cancel-btn {
+  transition: all .3s;
+  cursor: pointer;
+}
+
+.modalMailing__cancel-btn:hover {
+  color: #000000a1;
 }

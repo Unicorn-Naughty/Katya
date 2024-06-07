@@ -42,7 +42,7 @@
                 >
               </li>
               <li class="nav__list-item">
-                <a class="nav__link" href="#">Доставка</a>
+                <a class="nav__link" href="deliveryAndPayment.html">Доставка</a>
               </li>
               <li class="nav__list-item nav__list-item--cart">
                 <a class="nav__link" href="orderPage.html"
@@ -59,7 +59,8 @@
           <div class="header__item">
             <h1 class="header__title">
               <a class="header__title-link" href="#">Summer Tropikal</a>
-              <span class="header__title-addInfo">Лето 2024</span>
+              <span class="header__title-addInfo">new collection</span>
+              <span class="header__title-addInfo">2024</span>
             </h1>
           </div>
         </div>
@@ -68,54 +69,45 @@
     <main class="main">
       <div class="modalAboutUs">
         <div class="topModal">
-          <h2 class="title-section">Подробнее о нас</h2>
           <button class="cancelModal">Закрыть</button>
         </div>
-        <p class="textModal">
-          Все изделия KOLIBRI отшиваются на проверенных производствах.
-          <br />Основные наши коллекции отшиваются из натуральных тканей,
-          преимущественно без смесовой составляющей. В составе изделий имеется
-          минимальный процент полиамида — так мы поддерживаем форму и посадку
-          изделия, это делает его тактильно приятным и удобным.
-        </p>
-        <p class="textModal">
-          Основным вдохновением каждой коллекции является фигура русских женщин.
-          Мы делаем особый крой изделий, формируя женственный силуэт «песочные
-          часы»
-        </p>
-        <p class="textModal">
-          Разнообразие цвета, женственные силуэты, яркие акценты, легкость
-          изделий, натуральные ткани, воздушный крой, комфорт в жаркое время
-          года - это то, что отражает название бренда: KOLIBR
-        </p>
-        <p class="textModal">
-          Мы гордимся тем, что продаём наши коллекции практически без остатков,
-          а некоторые модели-бестселлеры перевыпускаем по несколько раз. Нас это
-          очень вдохновляет, потому что Ваше доверие — лучший показатель того,
-          что мы идем в верном
-        </p>
+        <div class="modalDown">
+          <p class="textModal">
+            Наша одежда подарит вам ощущение свободы и легкости, позволит
+            выразить вашу индивидуальность и стиль. Мы предлагаем широкий
+            ассортимент изделий, включающий в себя платья, шорты, костюмы и
+            многое другое, которые помогут создать идеальный образ для отдыха на
+            пляже, прогулок по городу или для яркого вечернего выхода.
+          </p>
+          <p class="textModal">
+            Бренд женской одежды в тропическом стиле - это выбор смелых и
+            стильных женщин, которые любят быть в центре внимания и привлекать
+            восхищенные взгляды окружающих. Позвольте себе окунуться в мир
+            экзотики и красоты с нашими уникальными моделями.
+          </p>
+        </div>
       </div>
       <div class="aboutus" id="aboutUs">
         <div class="container">
           <h2 class="title-section">О нас</h2>
           <div class="aboutus__info">
             <div class="abouts__boximg">
-              <img class="abouts__img" src="pics/3.jpg" alt="Фото" />
+              <img
+                class="abouts__img"
+                src="pics/items/88165321.jpg"
+                alt="Фото"
+              />
             </div>
             <div class="aboutus__content">
               <p class="aboutus__text">
-                Бренд KOLIBRI помогает девушкам добавить в летний гардероб ярких
-                красок, чтобы почувствовать комфорт, любовь к себе через
-                материалы, крой и сервис.
+                Наш бренд женской одежды в тропическом стиле представляет собой
+                яркую и экзотическую коллекцию, вдохновленную красотой и
+                теплотой тропиков. Мы используем яркие цвета и легкие ткани,
+                чтобы создать легкую, женственную и удобную одежду для жарких
+                дней.
               </p>
-              <p class="aboutus__text">
-                Сила девушек, который выбирают наши изделия — в удобмном
-                сочетании комфорта и женственности. В нашей одежде Вы всегда
-                будете чувствовать комфорт, роскошь и свободу в движениях.
-              </p>
-              <button class="aboutus__learn-more">
-                Подробнее ... (click on me)
-              </button>
+
+              <button class="aboutus__learn-more">Подробнее ...</button>
             </div>
           </div>
         </div>
@@ -128,6 +120,22 @@
           </div>
         </div>
         <div class="awaitSoon">
+          <div class="modalMailing">
+            <div class="modalMailing__cancel-btn">X</div>
+            <h3 class="modalMailing__title">УЗНАВАЙТЕ ПЕРВЫМИ О НОВИНКАХ</h3>
+            <form action="#" class="modalMailing__div">
+              <input
+                class="modalMailing__input"
+                type="email"
+                placeholder="Эл.почта"
+              />
+              <button type="submit" class="modalMailingBtn">></button>
+            </form>
+            <p class="modalMailing__text">
+              Подписываясь на рассылку, вы даете согласие на обработку
+              персональных данных.
+            </p>
+          </div>
           <div class="container">
             <h2 class="title-section">Скоро в продаже</h2>
             <div class="awaitSoon__items"></div>
@@ -140,9 +148,14 @@
           <div class="collection__communictaion--inner">
             <form class="collection__communictaion-form" action="#">
               <p class="collection__communictaion-text">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Corporis modi deserunt dolorum non iste officia, atque tempora
-                amet perspiciatis ratione debitis velit voluptate est incidunt.
+                Наш бренд очень ценит ваше мнение и всегда рады услышать его о
+                нашей продукции. Ваша обратная связь поможет нам улучшить работу
+                и сделать наши товары еще лучше. Вы можете оставить отзыв на
+                нашем сайте, кратко рассказав о пожеланиях или возражениях.
+              </p>
+              <p class="collection__communictaion-text">
+                Благодарим вас за ваше внимание и сотрудничество! С уважением,
+                командам KOLIBRI
               </p>
               <label class="collection__communictaion-label"
                 >Имя
@@ -164,14 +177,14 @@
                 class="collection__communictaion-textarea"
                 name=""
                 id=""
-                placeholder="Введите сообщение"
+                placeholder="Ваш отзыв"
               ></textarea>
               <button class="sendMes" type="submit">Отправить сообщение</button>
             </form>
             <div class="collection__communictaion-imgBox">
               <img
                 class="collection__communictaion-img"
-                src="pics/12.jpg"
+                src="pics/20350826.webp"
                 alt="Фото"
               />
             </div>
@@ -183,21 +196,25 @@
       <div class="container">
         <div class="footer__inner">
           <div class="footer__links">
-            <a class="footer__link" href="#katalog">Каталог</a>
+            <a class="footer__link" href="contactUs.html">Контакты</a>
             <a class="footer__link footer__link-main" href="#">Kolibri</a>
-            <a class="footer__link" href="#aboutUs">О нас</a>
+            <a class="footer__link" href="deliveryAndPayment.html">ДОставка</a>
           </div>
           <div class="footer__info">
             <a class="footer__info-link" href="tel:89855130013"
-              >8 (985)-513-00-13</a
+              >Тел: 8 (985)-513-00-13</a
             >
             <a class="footer__info-link" href="mailto:kolibri@gmail.ru"
-              >kolibri@gmail.ru</a
+              >E-mail: kolibri@gmail.ru</a
             >
           </div>
-          <span class="privacyandpolitical"
-            >Политика конфиденциальности и Условия использования</span
-          >
+          <div class="addDiv">
+            <a class="privacyandpolitical" href="publicOfer.html">ОФЕРТА</a>
+
+            <a class="privacyandpolitical" href="political.html"
+              >ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ</a
+            >
+          </div>
         </div>
       </div>
     </footer>

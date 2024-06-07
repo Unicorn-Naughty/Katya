@@ -40,10 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="orderPage__item-cost">
                   <span> Цена: </span> ${cartItem.quantity * cartItem.cost} руб
                 </div>
-                <div class="orderPage__size"><span>Размер:</span>${
+                <div class="orderPage__size"><span>Размер: </span>${
                   cartItem.size
                 }</div>
-                <div class="orderPage__color"><span>Цвет:</span>${
+                <div class="orderPage__color"><span>Цвет: </span>${
                   cartItem.color
                 }</div>
                 <div class="orderPage__counter">
