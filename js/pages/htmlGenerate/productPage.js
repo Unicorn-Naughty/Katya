@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
                   </a>
                 </div>
                 <div class="collection__item-info">
-                  <h5 class="collection__item-name">${name[0]}</h5>
+                  <h5 class="collection__item-name">${sliderProduct.secondName}</h5>
                   <a class="collection__item-btn" data-product-id="${sliderProduct.id}"href="productPage.html">${sliderProduct.cost}₽</a>
                 </div>
               </div>

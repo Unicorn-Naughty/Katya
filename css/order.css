@@ -13,6 +13,14 @@
 .orderPage__imgBox {
   margin-right: 100px;
 }
+.nav{
+  position: relative;
+}
+.nav__link-meow{
+  position: absolute;
+  bottom: 0;
+  transform: translateY(-50%);
+}
 .nav__list{
   justify-content: center;
 }

@@ -2,6 +2,9 @@ import { cart, removeFromCart } from "../interactive/cart.js";
 document.addEventListener("DOMContentLoaded", () => {
   let checkBoxesDel = document.querySelectorAll(".orderRadio--del");
   let totalCost;
+  let orderId = `AZ${Math.abs(Math.ceil(100) * 100)}BZ${Math.ceil(
+    Math.random(10) * 90
+  )}`;
   class UserOrder {
     constructor() {
       user: {
@@ -13,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
           (this.payment = payment),
           (this.delivery = delivery),
           (this.order = cart);
+        this.id = orderId;
         this.orderCost = totalCost;
       }
     }
@@ -203,5 +207,50 @@ document.addEventListener("DOMContentLoaded", () => {
         phone.style.border = "1px solid red";
         phone.scrollIntoView({ block: "center", behavior: "smooth" });
       }
+      let strCart = ``;
+      let x = "";
+      cart.forEach((cartItem) => {
+        x = `
+        Название: ${cartItem.name} 
+        Цвет: ${cartItem.color}
+        Размер: ${cartItem.size} 
+        Количество: ${cartItem.quantity} 
+        Цена: ${cartItem.cost}
+
+        `;
+        strCart += x;
+      });
+      console.log(strCart);
+      let data = {
+        service_id: "service_7ld8kpw",
+        template_id: "template_kbt83e9",
+        template_params: {
+          username: `${user.name}`,
+          mail: `${user.email}`,
+          id: `${user.id}`,
+          del: `${user.delivery}`,
+          phone: `${user.phone}`,
+          addres: `${user.addres}`,
+          delivery: `${user.delivery}`,
+          payment: `${user.payment}`,
+          orderCost: `${user.orderCost}`,
+          order: strCart,
+        },
+        user_id: "mlL_j8ayB-p55W9V3",
+      };
+
+      $.ajax("https://api.emailjs.com/api/v1.0/email/send", {
+        type: "POST",
+        data: JSON.stringify(data),
+        contentType: "application/json",
+      })
+        .done(function () {
+          alert("Данные о заказе были отправленны на вашу почту!");
+          window.location.href = "index.html";
+          localStorage.clear();
+        })
+        .fail(function (error) {
+          alert("Возникла ошибка :" + JSON.stringify(error));
+        });
     });
 });
