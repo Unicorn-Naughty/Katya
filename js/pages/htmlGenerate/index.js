@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let productsSoon = "";
   arrOfSoonCards.forEach((productSoon) => {
     productsSoon += `              
-    <a class="awaitSoon__item" href="#collection__communictaion">
+    <a class="awaitSoon__item" >
     <div class="awaitSoon__item-imgBox">
     <img
     class="awaitSoon__item-img"
@@ -142,4 +142,41 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelector(".cancelModal").addEventListener("click", () => {
     document.querySelector(".modalAboutUs").style.display = "none";
   });
+  let modalMailing = document.querySelector(".modalMailing");
+  let cancelMailing = document.querySelector(".modalMailing__cancel-btn");
+  document.querySelectorAll(".awaitSoon__item").forEach((element) => {
+    element.addEventListener("click", () => {
+      modalMailing.style.display = "block";
+    });
+  });
+
+  cancelMailing.addEventListener("click", () => {
+    modalMailing.style.display = "none";
+  });
+  document
+    .querySelector(".modalMailing__div")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      let email = document.querySelector(".modalMailing__input").value;
+
+      const headers = new Headers();
+      headers.append("Content-Type", "application/json");
+
+      const body = {
+        email,
+      };
+
+      const options = {
+        method: "POST",
+        headers,
+        mode: "cors",
+        body: JSON.stringify(body),
+      };
+
+      fetch("https://eoljwqner75npaf.m.pipedream.net", options);
+
+      alert("Ождиайте информацию о новинках на почту!");
+      modalMailing.style.display = "none";
+    });
 });
